@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="JPetStore_Struts_Mybatis_Spring" extends="struts-default">
+        <action name="demo" class="action.Demoaction">
+            <result name="SUCCESS">/WEB-INF/jsp/demo.jsp</result>
+        </action>
+
+        <action name="main" class="action.MainAction">
+            <result name="MAIN">/WEB-INF/jsp/catalog/Main.jsp</result>
+        </action>
+
+        <action name="viewCategory" class="action.ViewCategoryAction">
+            <result name="VIEW_CATEGORY">/WEB-INF/jsp/catalog/Category.jsp</result>
+        </action>
+
+        <action name="searchProduct" class="action.SearchProductAction">
+            <result name="SEARCH_PRODUCT">/WEB-INF/jsp/catalog/Category.jsp</result>
+        </action>
+
+        <action name="viewHelp" class="action.ViewHelpAction">
+            <result name="HELP">/WEB-INF/html/help.html</result>
+        </action>
+
+        <action name="viewCart" class="action.ViewCartAction">
+            <result name="VIEW_CART">/WEB-INF/jsp/cart/Cart.jsp</result>
+        </action>
+    </package>
+</struts>
