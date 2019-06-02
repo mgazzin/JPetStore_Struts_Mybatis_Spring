@@ -16,5 +16,11 @@
     </environments>
     <mappers>
         <mapper resource="mappers/AccountMapper.xml"/>
+        <mapper resource="mappers/CategoryMapper.xml"/>
+        <mapper resource="mappers/ItemMapper.xml"/>
+        <mapper resource="mappers/LineItemMapper.xml"/>
+        <mapper resource="mappers/OrderMapper.xml"/>
+        <mapper resource="mappers/ProductMapper.xml"/>
+        <mapper resource="mappers/SequenceMapper.xml"/>
     </mappers>
 </configuration>

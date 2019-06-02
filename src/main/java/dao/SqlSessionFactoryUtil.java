@@ -36,7 +36,7 @@ public class SqlSessionFactoryUtil {
 //
 //        SqlSession session = getSqlSessionFactory().openSession();
 //
-//        AccountDao accountDao = session.getMapper(AccountDao.class);
+//        AccountDAO accountDao = session.getMapper(AccountDAO.class);
 //
 //        Account result =accountDao.selectAccountByUsernameAndPassword(login);
 //

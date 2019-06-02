@@ -6,12 +6,22 @@
 
 <struts>
     <package name="JPetStore_Struts_Mybatis_Spring" extends="struts-default">
-        <action name="demo" class="action.Demoaction">
+        <action name="demo" class="action.AbstractAction">
             <result name="SUCCESS">/WEB-INF/jsp/demo.jsp</result>
         </action>
 
         <action name="main" class="action.MainAction">
             <result name="MAIN">/WEB-INF/jsp/catalog/Main.jsp</result>
+        </action>
+
+        <!-- 跳转到sign on-->
+        <action name="signonForm" class="action.AccountAction" method="signonForm">
+            <result name="success">/WEB-INF/jsp/account/SignonForm.jsp</result>
+        </action>
+
+        <!--退出登录sign off -->
+        <action name="signoff" class="action.AccountAction" method="signoff">
+            <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
         </action>
 
         <action name="viewCategory" class="action.ViewCategoryAction">
