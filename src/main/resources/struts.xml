@@ -24,7 +24,7 @@
             <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
         </action>
 
-        <action name="viewCategory" class="action.ViewCategoryAction">
+        <action name="viewCategory" class="action.ViewCategoryAction" method="viewCategory">
             <result name="VIEW_CATEGORY">/WEB-INF/jsp/catalog/Category.jsp</result>
         </action>
 

@@ -36,7 +36,6 @@ public class AbstractAction extends ActionSupport implements RequestAware, Sessi
     @Override
     public void setSession(Map<String, Object> session) {
         this.session=session;
-
     }
 
     @Override
