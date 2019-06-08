@@ -5,27 +5,27 @@
 <mapper namespace="dao.ProductDAO">
 
 
-  <select id="getProduct" parameterType="string" resultType="product">
+  <select id="getProduct" parameterType="string" resultType="domain.Product">
     SELECT
-      PRODUCTID,
-      NAME,
-      DESCN as description,
-      CATEGORY as categoryId
-    FROM PRODUCT
-    WHERE PRODUCTID = #{productId}
+      productid,
+      name,
+      descn as description,
+      category as categoryId
+    FROM product
+    WHERE productid = #{productId}
   </select>
 
-  <select id="getProductListByCategory" parameterType="string" resultType="product">
+  <select id="getProductListByCategory" parameterType="string" resultType="domain.Product">
     SELECT
-      PRODUCTID,
-      NAME,
-      DESCN as description,
-      CATEGORY as categoryId
-    FROM PRODUCT
-    WHERE CATEGORY = #{value}
+      productid,
+      name,
+      descn as description,
+      category as categoryId
+    FROM product
+    WHERE category = #{value}
   </select>
 
-  <select id="searchProductList" parameterType="string" resultType="product">
+  <select id="searchProductList" parameterType="string" resultType="domain.Product">
     select
       PRODUCTID,
       NAME,

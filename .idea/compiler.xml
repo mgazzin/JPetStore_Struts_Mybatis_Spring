@@ -9,5 +9,8 @@
         <module name="JPetStore_Struts_Mybatis_Spring" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JPetStore_Struts_Mybatis_Spring" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

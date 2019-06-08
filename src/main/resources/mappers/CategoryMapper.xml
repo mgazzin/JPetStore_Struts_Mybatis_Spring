@@ -4,21 +4,21 @@
 
 <mapper namespace="dao.CategoryDAO">
   
-  <select id="getCategory" parameterType="string" resultType="category">
+  <select id="getCategory" parameterType="string" resultType="domain.Category">
     SELECT
-      CATID AS categoryId,
-      NAME,
-      DESCN AS description
-    FROM CATEGORY
-    WHERE CATID = #{categoryId}
+      catid AS categoryId,
+      name,
+      descn AS description
+    FROM category
+    WHERE catid = #{categoryId}
   </select>
 
-  <select id="getCategoryList" resultType="category">
+  <select id="getCategoryList" resultType="domain.Category">
     SELECT
-      CATID AS categoryId,
-      NAME,
-      DESCN AS description
-    FROM CATEGORY
+      catid AS categoryId,
+      name,
+      descn AS description
+    FROM category
   </select>
 
 </mapper>

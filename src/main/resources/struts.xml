@@ -23,9 +23,9 @@
         <action name="signoff" class="action.AccountAction" method="signoff">
             <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
         </action>
-
-        <action name="viewCategory" class="action.ViewCategoryAction" method="viewCategory">
-            <result name="VIEW_CATEGORY">/WEB-INF/jsp/catalog/Category.jsp</result>
+        <!--查看category-->
+        <action name="viewCategory" class="action.ViewCategoryAction" >
+            <result name="success">/WEB-INF/jsp/catalog/Category.jsp</result>
         </action>
 
         <action name="searchProduct" class="action.SearchProductAction">
@@ -35,8 +35,8 @@
         <action name="viewHelp" class="action.ViewHelpAction">
             <result name="HELP">/WEB-INF/html/help.html</result>
         </action>
-
-        <action name="viewCart" class="action.ViewCartAction">
+        <!--查看购物车-->
+        <action name="viewCart" class="action.ViewCartAction" method="viewCart">
             <result name="VIEW_CART">/WEB-INF/jsp/cart/Cart.jsp</result>
         </action>
     </package>
