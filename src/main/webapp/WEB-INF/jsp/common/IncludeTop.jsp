@@ -152,11 +152,11 @@
             </a>
             <img align="middle" src="images/separator.gif" />
 
-            <c:if test="${sessionScope.account == null}">
+            <c:if test="${session.account == null}">
 
                 <a href="signonForm">Sign In</a>
             </c:if>
-            <c:if test="${sessionScope.account != null}">
+            <c:if test="${session.account != null}">
                 <a href="signOut">Sign Out</a>
                 <img align="middle" src="images/separator.gif" />
                 <a href="editAccount">My Account</a>

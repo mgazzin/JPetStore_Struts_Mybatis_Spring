@@ -5,7 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-    <package name="JPetStore_Struts_Mybatis_Spring" extends="struts-default">
+    <package name="JPetStore_Struts_Mybatis_Spring"  extends="struts-default">
         <action name="demo" class="action.AbstractAction">
             <result name="SUCCESS">/WEB-INF/jsp/demo.jsp</result>
         </action>
@@ -27,9 +27,8 @@
         <action name="viewCategory" class="action.ViewCategoryAction" >
             <result name="success">/WEB-INF/jsp/catalog/Category.jsp</result>
         </action>
-
         <!--查看product-->
-        <action name="viewProduct" class="action.ViewProductAction" >
+        <action name="viewProduct"  class="action.ViewProductAction" >
             <result name="success">/WEB-INF/jsp/catalog/Product.jsp</result>
         </action>
 
@@ -48,6 +47,14 @@
         <!--查看购物车-->
         <action name="viewCart" class="action.ViewCartAction" method="viewCart">
             <result name="VIEW_CART">/WEB-INF/jsp/cart/Cart.jsp</result>
+        </action>
+        <!--跳转到注册-->
+        <action name="register" class="action.RegisterAction">
+            <result name="success">/WEB-INF/jsp/catalog/NewAccountForm.jsp</result>
+        </action>
+        <!--新增用户-->
+        <action name="newAccount" class="action.">
+            <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
         </action>
     </package>
 </struts>
