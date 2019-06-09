@@ -28,6 +28,16 @@
             <result name="success">/WEB-INF/jsp/catalog/Category.jsp</result>
         </action>
 
+        <!--查看product-->
+        <action name="viewProduct" class="action.ViewProductAction" >
+            <result name="success">/WEB-INF/jsp/catalog/Product.jsp</result>
+        </action>
+
+        <!--查看item-->
+        <action name="viewItem" class="action.ViewItemAction" >
+            <result name="success">/WEB-INF/jsp/catalog/Item.jsp</result>
+        </action>
+
         <action name="searchProduct" class="action.SearchProductAction">
             <result name="SEARCH_PRODUCT">/WEB-INF/jsp/catalog/Category.jsp</result>
         </action>

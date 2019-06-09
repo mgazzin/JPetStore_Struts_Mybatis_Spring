@@ -28,8 +28,7 @@
 			${item.attribute4} ${item.attribute5} ${sessionScope.product.name}
 			</td>
 			<td>
-				<fmt:formatNumber value="${item.listPrice}"
-				pattern="$#,##0.00" />
+				<fmt:formatNumber value="${item.listPrice}" pattern="$#,##0.00" />
 			</td>
 			<td>
 			<a class="Button" href="addItemToCart?workingItemId=${item.itemId}">Add to Cart</a>

@@ -1,13 +1,11 @@
 package service;
 
+import dao.*;
 import domain.Item;
 import domain.LineItem;
 import domain.Order;
 import domain.Sequence;
-import dao.ItemDAO;
-import dao.LineItemDAO;
-import dao.OrderDAO;
-import dao.SequenceDAO;
+import org.apache.ibatis.session.SqlSession;
 
 
 import java.util.HashMap;
@@ -16,11 +14,19 @@ import java.util.Map;
 
 
 public class OrderService {
+  private  SqlSession sqlSession;
   private ItemDAO itemDAO;
   private LineItemDAO lineItemDAO;
   private OrderDAO orderDAO;
   private SequenceDAO sequenceDAO;
 
+  public OrderService(){
+    sqlSession = SqlSessionFactoryUtil.getSqlSessionFactory().openSession();
+    lineItemDAO = sqlSession.getMapper(LineItemDAO.class);
+    orderDAO = sqlSession.getMapper(OrderDAO.class);
+    itemDAO = sqlSession.getMapper(ItemDAO.class);
+    sequenceDAO = sqlSession.getMapper(SequenceDAO.class);
+  }
   public void insertOrder(Order order) {
     order.setOrderId(getNextId("ordernum"));
     for (int i = 0; i < order.getLineItems().size(); i++) {

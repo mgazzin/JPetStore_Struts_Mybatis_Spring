@@ -1,13 +1,18 @@
 package service;
 
+import dao.*;
 import domain.Account;
-import dao.AccountDAO;
+import org.apache.ibatis.session.SqlSession;
 
 public class AccountService {
 
+  private SqlSession sqlSession;
   private AccountDAO accountDAO;
 
-
+  public AccountService(){
+    sqlSession = SqlSessionFactoryUtil.getSqlSessionFactory().openSession();
+    accountDAO = sqlSession.getMapper(AccountDAO.class);
+  }
   public Account getAccount(String username) {
     return accountDAO.getAccountByUsername(username);
   }

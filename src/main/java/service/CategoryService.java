@@ -1,20 +1,29 @@
 package service;
 
+import dao.SqlSessionFactoryUtil;
 import domain.Category;
 import domain.Item;
 import domain.Product;
 import dao.CategoryDAO;
 import dao.ItemDAO;
 import dao.ProductDAO;
+import org.apache.ibatis.session.SqlSession;
 
 
 import java.util.List;
 
 public class CategoryService {
+	private  SqlSession sqlSession;
 	private CategoryDAO categoryDAO;
 	private ProductDAO productDAO;
 	private ItemDAO itemDAO;
 
+	public CategoryService(){
+		sqlSession = SqlSessionFactoryUtil.getSqlSessionFactory().openSession();
+		categoryDAO = sqlSession.getMapper(CategoryDAO.class);
+		productDAO = sqlSession.getMapper(ProductDAO.class);
+		itemDAO = sqlSession.getMapper(ItemDAO.class);
+	}
 
 	public List<Category> getCategoryList() {
 		return categoryDAO.getCategoryList();
