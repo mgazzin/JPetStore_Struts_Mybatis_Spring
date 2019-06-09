@@ -50,10 +50,10 @@
         </action>
         <!--跳转到注册-->
         <action name="register" class="action.RegisterAction">
-            <result name="success">/WEB-INF/jsp/catalog/NewAccountForm.jsp</result>
+            <result name="success">/WEB-INF/jsp/account/NewAccountForm.jsp</result>
         </action>
         <!--新增用户-->
-        <action name="newAccount" class="action.">
+        <action name="newAccount" class="action.NewAccountAction">
             <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
         </action>
     </package>
