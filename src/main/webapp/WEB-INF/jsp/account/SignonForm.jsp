@@ -9,7 +9,6 @@
 	</script>
 <form action="login" method="post">
 
-	<p>${requestScope.msg1} ${requestScope.msg} ${sessionScope.loginError}<%session.removeAttribute("loginError"); %></p>
 	<p>Please enter your username and password.</p>
 	<p>
 		Username:

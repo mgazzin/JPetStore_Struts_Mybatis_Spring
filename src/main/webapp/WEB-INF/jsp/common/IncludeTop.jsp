@@ -9,6 +9,7 @@
 <%--<%@ taglib prefix="s" uri="/struts-tags" %>--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -152,15 +153,15 @@
             </a>
             <img align="middle" src="images/separator.gif" />
 
-            <c:if test="${session.account == null}">
+            <s:if test="#session.account == null">
 
                 <a href="signonForm">Sign In</a>
-            </c:if>
-            <c:if test="${session.account != null}">
-                <a href="signOut">Sign Out</a>
+            </s:if>
+            <s:if test="#session.account != null">
+                <a href="signoff">Sign Out</a>
                 <img align="middle" src="images/separator.gif" />
                 <a href="editAccount">My Account</a>
-            </c:if>
+            </s:if>
             <img align="middle" src="images/separator.gif" />
 
             <a href="viewHelp">?</a>

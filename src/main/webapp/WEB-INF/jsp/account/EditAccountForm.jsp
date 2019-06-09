@@ -1,14 +1,14 @@
 <%@ include file="../common/IncludeTop.jsp"%>
 <div id="Content">
 <div id="Catalog">
-	<form action="confirmEdit" method="post">
+	<form action="confirmEdit?username=<s:property value="#session.account.username"/>" method="post">
 
 	<h3>User Information</h3>
 
 	<table>
 		<tr>
 			<td>User ID:</td>
-			<td>${sessionScope.account.username}</td>
+			<td><s:property value="#session.account.username"/></td>
 		</tr>
 		<tr>
 			<td>New password:</td>

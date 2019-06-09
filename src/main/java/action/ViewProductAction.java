@@ -3,6 +3,7 @@ package action;
 import domain.Item;
 import domain.Product;
 import service.CatalogService;
+import com.opensymphony.xwork2.Action;
 
 import java.util.List;
 

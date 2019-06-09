@@ -24,7 +24,7 @@
             <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
         </action>
         <!--查看category-->
-        <action name="viewCategory" class="action.ViewCategoryAction" >
+        <action name="viewCategory" class="action.ViewCategoryAction">
             <result name="success">/WEB-INF/jsp/catalog/Category.jsp</result>
         </action>
         <!--查看product-->
@@ -55,6 +55,19 @@
         <!--新增用户-->
         <action name="newAccount" class="action.NewAccountAction">
             <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
+        </action>
+        <!--登陆-->
+        <action name="login" class="action.SignOnAction">
+            <result name="success">/WEB-INF/jsp/catalog/Main.jsp</result>
+            <result name="input">/WEB-INF/jsp/account/SignonForm.jsp</result>
+        </action>
+        <!--跳转至编辑account界面-->
+        <action name="editAccount" class="action.EditAccountAction">
+            <result name="success">/WEB-INF/jsp/account/EditAccountForm.jsp</result>
+        </action>
+        <!--编辑account-->
+        <action name="confirmEdit" class="action.ConfirmEditAction">
+            <result name="success">/WEB-INF/jsp/account/EditAccountForm.jsp</result>
         </action>
     </package>
 </struts>

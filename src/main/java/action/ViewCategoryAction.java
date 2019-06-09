@@ -4,6 +4,7 @@ import domain.Account;
 import domain.Category;
 import domain.Product;
 import service.CatalogService;
+import com.opensymphony.xwork2.Action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
