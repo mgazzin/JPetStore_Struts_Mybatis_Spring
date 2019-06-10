@@ -6,10 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<%@ taglib prefix="s" uri="/struts-tags" %>--%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -158,7 +156,7 @@
                 <a href="signonForm">Sign In</a>
             </s:if>
             <s:if test="#session.account != null">
-                <a href="signoff">Sign Out</a>
+                <a href="signOut">Sign Out</a>
                 <img align="middle" src="images/separator.gif" />
                 <a href="editAccount">My Account</a>
             </s:if>

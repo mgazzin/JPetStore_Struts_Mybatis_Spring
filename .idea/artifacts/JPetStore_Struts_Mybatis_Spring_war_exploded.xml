@@ -1,6 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="JPetStore_Struts_Mybatis_Spring:war exploded">
     <output-path>$PROJECT_DIR$/target/JPetStore_Struts_Mybatis_Spring</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>JPetStore_Struts_Mybatis_Spring</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -26,8 +33,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.15" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
-          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
-          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

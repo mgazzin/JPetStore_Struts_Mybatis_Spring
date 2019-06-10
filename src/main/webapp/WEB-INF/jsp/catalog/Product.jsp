@@ -2,13 +2,19 @@
 
 <div id="Content">
 <div id="BackLink">
-<a href="viewCategory?categoryId=${sessionScope.product.categoryId}">Return to ${sessionScope.product.categoryId}</a>
+	<a href="<s:url action="viewCategory">
+		<s:param name="categoryId">
+		<s:property value="#session.product.categoryId"/>
+		</s:param>
+		</s:url>">
+		Return to <s:property value="#session.product.categoryId"/>
+	</a>
 </div>
 
 
 <div id="Catalog">
 
-<h2>${sessionScope.product.name}</h2>
+<h2><s:property value="#session.product.name"/></h2>
 
 <table>
 	<tr>
@@ -18,23 +24,34 @@
 		<th>List Price</th>
 		<th>&nbsp;</th>
 	</tr>
-	<c:forEach var="item" items="${sessionScope.itemList}">
+	<s:iterator value="itemList">
 		<tr>
 			<td>
-			<a href="viewItem?itemId=${item.itemId}">${item.itemId}</a>
-			</td>
-			<td>${item.product.productId}</td>
-			<td>${item.attribute1} ${item.attribute2} ${item.attribute3}
-			${item.attribute4} ${item.attribute5} ${sessionScope.product.name}
-			</td>
-			<td>
-				<fmt:formatNumber value="${item.listPrice}" pattern="$#,##0.00" />
+				<a href="<s:url action="viewItem">
+							<s:param name="itemId"><s:property value="itemId"/></s:param>
+						</s:url>">
+					<s:property value="itemId"/>
+				</a>
 			</td>
 			<td>
-			<a class="Button" href="addItemToCart?workingItemId=${item.itemId}">Add to Cart</a>
+				<s:property value="#session.product.productId"/>
+			</td>
+			<td>
+				<s:property value="attribute1"/> <s:property value="attribute2"/> <s:property value="attribute3"/>
+				<s:property value="attribute4"/> <s:property value="attribute5"/> <s:property value="product.name"/>
+			</td>
+			<td>
+				<s:property value="formatListPrice()"/>
+			</td>
+			<td>
+				<a class="Button" href="<s:url action="addItemToCart">
+							<s:param name="workingItemId"><s:property value="itemId"/></s:param>
+					</s:url>">
+					Add to Cart
+				</a>
 			</td>
 		</tr>
-	</c:forEach>
+	</s:iterator>
 	<tr>
 		<td>
 		</td>

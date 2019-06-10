@@ -12,25 +12,25 @@
 				<td>Card Type:</td>
 				<td>
 					<select name="cardType">
-						<c:forEach items="${sessionScope.creditCardTypes}" var="cardType">
+						<s:iterator value="#session.creditCardTypes" >
 							<option selected="selected" value="Visa">Visa</option>
 							<option value="MasterCard">MasterCard</option>
 							<option value="American Express">American Express</option>
-						</c:forEach>
+						</s:iterator>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<td>Card Number:</td>
 				<td>
-					<input type="text" name="creditCard" value="${sessionScope.order.creditCard}">
+					<input type="text" name="order.creditCard" value="<s:property value="#session.order.creditCard"/>">
 					* Use a fake number!
 				</td>
 			</tr>
 			<tr>
 				<td>Expiry Date (MM/YYYY):</td>
 				<td>
-					<input type="text" name="expiryDate" value="${sessionScope.order.expiryDate}">
+					<input type="text" name="order.expiryDate" value="<s:property value="#session.order.expiryDate"/>">
 				</td>
 			</tr>
 			<tr>
@@ -40,49 +40,49 @@
 			<tr>
 				<td>First name:</td>
 				<td>
-					<input type="text" name="firstName" value="${sessionScope.order.billToFirstName}">
+					<input type="text" name="order.firstName" value="<s:property value="#session.order.billToFirstName"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>Last name:</td>
 				<td>
-					<input type="text" name="lastName" value="${sessionScope.order.billToLastName}">
+					<input type="text" name="order.lastName" value="<s:property value="#session.order.billToLastName"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>Address 1:</td>
 				<td>
-					<input type="text" name="address1" value="${sessionScope.order.billAddress1}">
+					<input type="text" name="order.address1" value="<s:property value="#session.order.billAddress1"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>Address 2:</td>
 				<td>
-					<input type="text" name="address2" value="${sessionScope.order.billAddress2}">
+					<input type="text" name="order.address2" value="<s:property value="#session.order.billAddress2"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>City:</td>
 				<td>
-					<input type="text" name="city" value="${sessionScope.order.billCity}">
+					<input type="text" name="order.city" value="<s:property value="#session.order.billCity"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>State:</td>
 				<td>
-					<input type="text" name="state" value="${sessionScope.order.billState}">
+					<input type="text" name="order.state" value="<s:property value="#session.order.billState"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>Zip:</td>
 				<td>
-					<input type="text" name="zip" value="${sessionScope.order.billZip}">
+					<input type="text" name="order.zip" value="<s:property value="#session.order.billZip"/>">
 				</td>
 			</tr>
 			<tr>
 				<td>Country:</td>
 				<td>
-					<input type="text" name="country" value="${sessionScope.order.billCountry}">
+					<input type="text" name="order.country" value="<s:property value="#session.order.billCountry"/>">
 				</td>
 			</tr>
 

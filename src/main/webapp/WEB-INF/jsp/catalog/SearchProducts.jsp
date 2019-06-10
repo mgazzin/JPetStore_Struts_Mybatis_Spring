@@ -11,21 +11,31 @@
 		<th>Product ID</th>
 		<th>Name</th>
 	</tr>
-	<c:forEach var="product" items="${sessionScope.searchProductList}">
+	<s:iterator value="#session.searchProductList">
 		<tr>
 			<td>
-					<a href="viewProduct?productId=${product.productId}">${product.description}</a>
-
+				<a href="<s:url action="viewProduct">
+						<s:param name="productId"><s:property value="productId"/></s:param>
+					</s:url>">
+					<s:property value="description" escapeHtml="false"/>
+				</a>
 			</td>
-			<td><b>
-			<a href="viewProduct?productId=${product.productId}"><font color="BLACK"> ${product.productId} </font></a>
-			</b></td>
-			<td>${product.name}</td>
+			<td>
+				<b>
+					<a href="<s:url action="viewProduct">
+						<s:param name="productId"><s:property value="productId"/></s:param>
+					</s:url>">
+						<s:property value="productId"/>
+					</a>
+				</b>
+			</td>
+			<td><s:property value="name"/></td>
 		</tr>
-	</c:forEach>
+	</s:iterator>
 	<tr>
 		<td></td>
 	</tr>
+
 
 </table>
 

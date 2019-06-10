@@ -28,52 +28,58 @@
 		</thead>
 
 		<tbody>
-		<c:if test="${sessionScope.cart.numberOfItems == 0}">
+		<s:if test="#session.cart.numberOfItems == 0">
 			<tr>
 				<td colspan="8"><b>Your cart is empty.</b></td>
 			</tr>
-		</c:if>
+		</s:if>
 
-		<c:forEach var="cartItem" items="${sessionScope.cart.cartItems}">
+		<s:iterator value="#session.cart.cartItems">
 			<tr>
 				<td>
 
-					<a href="viewItem?itemId=${cartItem.item.itemId}" id="itemId">${cartItem.item.itemId}</a>
+					<a href=" <s:url action="viewItem">
+					<s:param><s:property value="item.itemId" /></s:param>
+					</s:url> ">
+							<s:property value="item.itemId"/>
+					</a>
 
 				</td>
 
-				<td>${cartItem.item.product.productId}</td>
-
-
-				<td>${cartItem.item.attribute1} ${cartItem.item.attribute2}
-						${cartItem.item.attribute3} ${cartItem.item.attribute4}
-						${cartItem.item.attribute5} ${cartItem.item.product.name}</td>
-
-				<td>${cartItem.inStock}</td>
 				<td>
-
-					<input type="text" name="${cartItem.item.itemId}" value="${cartItem.quantity}" >
+					<s:property value="item.product.productId"/>
+				</td>
+				<td>
+					<s:property value="item.attribute1"/><s:property value="item.attribute2"/>
+					<s:property value="item.attribute3"/><s:property value="item.attribute4"/>
+					<s:property value="item.attribute5"/><s:property value="item.product.name"/>
+				</td>
+				<td>
+					<s:property value="inStock"/>
+				</td>
+				<td>
+					<input type="number" id="<s:property value="item.itemId"/>" value="<s:property value="quantity"/>" >
 
 				</td>
-				<td><fmt:formatNumber value="${cartItem.item.listPrice}" pattern="$#,##0.00" /></td>
-				<td><fmt:formatNumber value="${cartItem.total}" pattern="$#,##0.00" /></td>
-
-
-
-
 				<td>
-					<a href="removeItemFromCart?workingItemId=${cartItem.item.itemId}" class="Button">Remove</a>
+					<s:property value="item.formatListPrice()"/>
+				</td>
+				<td>
+					<s:property value="total"/>
+				</td>
+				<td>
+					<a href="<s:url action="removeItemFromCart"><s:param><s:property value="item.itemId" /></s:param>
+					</s:url>" class="Button">Remove</a>
 				</td>
 			</tr>
-		</c:forEach>
+		</s:iterator>
 		</tbody>
 
 		<tr>
-			<td colspan="7" id="totalItemPrice">
-				Sub Total:<fmt:formatNumber value="${sessionScope.cart.subTotal}" pattern="$#,##0.00" />
+			<td colspan="7" id="subTotal">
+			SubTotal:<s:property value="#session.cart.formatSubTotal()"/>
 				<input type="submit" value="Update Cart">
-			</td>
-
+		</td>
 			<td>&nbsp;</td>
 		</tr>
 	</table>
@@ -82,10 +88,10 @@
 
 
 
-	<c:if test="${sessionScope.cart.numberOfItems > 0}">
+	<s:if test="#session.cart.numberOfItems > 0">
 
-		<a href="viewOrderForm"  class="Button">Proceed to Checkout</a>
-</c:if>
+		<a href="newOrderForm"  class="Button">Proceed to Checkout</a>
+</s:if>
 
 </div>
 

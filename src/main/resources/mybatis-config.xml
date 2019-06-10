@@ -7,7 +7,7 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://47.101.180.71:3306/JPetStore_Re?serverTimezone=UTC"/>
                 <property name="username" value="root"/>
                 <property name="password" value="Geneve@Aliyun"/>

@@ -18,12 +18,28 @@ public class ViewCategoryAction extends AbstractAction {
     private String categoryId;
     private List<Product> productList;
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public String getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
     public Account getAccount() {

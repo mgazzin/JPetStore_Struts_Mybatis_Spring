@@ -2,6 +2,7 @@ package domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class Item implements Serializable {
 
@@ -127,6 +128,17 @@ public class Item implements Serializable {
 
   public String toString() {
     return "(" + getItemId() + "-" + getProductId() + ")";
+  }
+
+  public String formatListPrice()
+  {
+    DecimalFormat fmt = new DecimalFormat("$#,##0.00");
+    return fmt.format(getListPrice());
+  }
+
+  public String formatUnitCost(){
+    DecimalFormat fmt = new DecimalFormat("$#,##0.00");
+    return fmt.format(getUnitCost());
   }
 
 }

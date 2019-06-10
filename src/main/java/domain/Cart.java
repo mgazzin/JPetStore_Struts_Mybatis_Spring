@@ -4,6 +4,7 @@ package domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Cart implements Serializable {
@@ -76,6 +77,11 @@ public class Cart implements Serializable {
       subTotal = subTotal.add(listPrice.multiply(quantity));
     }
     return subTotal;
+  }
+
+  public String formatSubTotal(){
+    DecimalFormat fmt = new DecimalFormat("$#,##0.00");
+    return fmt.format(getSubTotal());
   }
 
 }

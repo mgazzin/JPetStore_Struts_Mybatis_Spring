@@ -2,6 +2,7 @@ package domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -303,5 +304,8 @@ public class Order implements Serializable {
   public void addLineItem(LineItem lineItem) {
     lineItems.add(lineItem);
   }
-
+  public String formatTotalPrice(){
+    DecimalFormat fmt = new DecimalFormat("$#,##0.00");
+    return fmt.format(getTotalPrice());
+  }
 }

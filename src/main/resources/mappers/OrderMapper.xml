@@ -73,8 +73,7 @@
   </select>
 
   <insert id="insertOrder" parameterType="domain.Order">
-    insert into orders (orderid, userid, orderdate, shipaddr1, shipaddr2, shipcity, shipstate,
-      shipzip, shipcountry, billaddr1, billaddr2, billcity, billstate, billzip, billcountry,
+    insert into orders (orderid,userid, orderdate, shipaddr1, shipaddr2, shipcity, shipstate,shipzip, shipcountry, billaddr1, billaddr2, billcity, billstate, billzip, billcountry,
       courier, totalprice, billtofirstname, billtolastname, shiptofirstname, shiptolastname,
       creditcard, exprdate, cardtype, locale)
     values(#{orderId}, #{username}, #{orderDate}, #{shipAddress1}, #{shipAddress2,jdbcType=VARCHAR}, #{shipCity},

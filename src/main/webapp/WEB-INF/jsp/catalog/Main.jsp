@@ -109,31 +109,28 @@
     </script>
     <div id="Welcome">
         <div id="WelcomeContent">
-            <c:if test="${sessionScope.accountBean != null }">
-                <c:if test="${sessionScope.authenticated}">Welcome ${sessionScope.accountBean.firstName}!
-                </c:if>
-            </c:if>
+            <s:if test="#session.account!= null }">
+                Welcome <s:property value="#session.account.firstName"/>!
+
+            </s:if>
         </div>
     </div>
 
     <div id="Main">
         <div id="Sidebar">
             <div id="SidebarContent">
-                <a href="viewCategory?categoryId=FISH"><img src="images/fish_icon.gif" /></a><br />
-                Saltwater, Freshwater <br />
-
-                <a href="viewCategory?categoryId=DOGS"><img src="images/dogs_icon.gif" /></a> <br />
-                Various Breeds <br />
-
-                <a href="viewCategory?categoryId=CATS"><img src="images/cats_icon.gif" /></a><br />
-                Various Breeds, Exotic Varieties <br />
-
-                <a href="viewCategory?categoryId=REPTILES"><img src="images/reptiles_icon.gif" /></a><br />
-                Lizards, Turtles, Snakes <br />
-
-                <a href="viewCategory?categoryId=BIRDS"><img src="images/birds_icon.gif" /></a><br />
-                Exotic Varieties
+                <a href="<s:url action="viewCategory?categoryId=FISH"/>"><img src="images/fish_icon.gif" /></a>
+                <br/> Saltwater, Freshwater <br/>
+                <a href="<s:url action="viewCategory?categoryId=DOGS"/>"><img src="images/dogs_icon.gif" /></a>
+                <br /> Various Breeds <br />
+                <a href="<s:url action="viewCategory?categoryId=CATS"/>"><img src="images/cats_icon.gif" /></a>
+                <br /> Various Breeds, Exotic Varieties <br />
+                <a href="<s:url action="viewCategory?categoryId=REPTILES"/>"><img src="images/reptiles_icon.gif" /></a>
+                <br /> Lizards, Turtles, Snakes <br />
+                <a href="<s:url action="viewCategory?categoryId=BIRDS"/>"><img src="images/birds_icon.gif" /></a>
+                <br /> Exotic Varieties
             </div>
+        </div>
         </div>
 
         <div id="MainImage">
