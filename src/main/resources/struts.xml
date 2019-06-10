@@ -101,5 +101,15 @@
         <action name="viewOrder" class="action.ViewOrderAction">
             <result name="success">/WEB-INF/jsp/order/ViewOrder.jsp</result>
         </action>
+
+        <!--检查订单-->
+        <action name="checkOrder" class="action.CheckOrderAction">
+            <result name="success">/WEB-INF/jsp/order/ViewOrder.jsp</result>
+        </action>
+
+        <!--我的订单-->
+        <action name="orderList" class="action.OrderListAction">
+            <result name="success">/WEB-INF/jsp/order/ListOrders.jsp</result>
+        </action>
     </package>
 </struts>

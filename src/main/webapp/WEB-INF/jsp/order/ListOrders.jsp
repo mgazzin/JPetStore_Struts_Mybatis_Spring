@@ -9,19 +9,23 @@
 		<th>Total Price</th>
 	</tr>
 
-	<c:forEach var="order" items="${sessionScope.orderList}">
+	<s:iterator value="orderList">
 		<tr>
 			<td>
-				<a href="checkOrder?orderId=${order.orderId}">${order.orderId}</a>
+				<a href="<s:url action="checkOrder">
+					<s:param name="orderId"><s:property value="orderId"/></s:param>
+				</s:url>">
+					<s:property value="orderId"/>
+				</a>
 			</td>
 			<td>
-				<fmt:formatDate value="${order.orderDate}" pattern="yyyy/MM/dd hh:mm:ss" />
+				<s:date name="orderDate" format="yyyy/MM/dd hh:mm:ss"/>
 			</td>
 			<td>
-				<fmt:formatNumber value="${order.totalPrice}" pattern="$#,##0.00" />
+				<s:property value="formatTotalPrice()"/>
 			</td>
 		</tr>
-	</c:forEach>
+	</s:iterator>
 </table>
 </div>
 <%@ include file="../common/IncludeBottom.jsp"%>
