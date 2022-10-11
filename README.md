@@ -1,5 +1,6 @@
-# 软件架构项目(JPetStore)
-### 宋铁NB小组
-    项目建立时间2019.4.23
-### 第一次实验
-    实现使用 struts2 以及 mybatis 重构项目 
+# JPetStore example integration with Spring, Struts2, MyBatis
+
+This example was taken from https://github.com/GENEVE0086/JPetStore_Struts_Mybatis_Spring and adjusted with the addition of MariaDB database schema and values.
+At the moment it is fully working.
+
+
